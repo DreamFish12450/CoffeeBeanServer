@@ -746,29 +746,182 @@ wordpress|schema||user|localhost|UPDATE|G</Grants>
     <user id="148" parent="1" name="user">
       <Host>localhost</Host>
     </user>
-    <table id="149" parent="3" name="userInfo"/>
-    <column id="150" parent="149" name="id">
+    <table id="149" parent="3" name="contactGroup"/>
+    <table id="150" parent="3" name="contactInfo"/>
+    <table id="151" parent="3" name="onlineUser"/>
+    <table id="152" parent="3" name="phoneRecord"/>
+    <table id="153" parent="3" name="userInfo"/>
+    <table id="154" parent="3" name="userPost"/>
+    <column id="155" parent="149" name="group_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="151" parent="149" name="username">
+    <column id="156" parent="149" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="157" parent="149" name="group_id">
+      <ColNames>group_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="158" parent="149" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="159" parent="149" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>group_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="160" parent="149" name="group_id">
+      <ColNames>group_id</ColNames>
+      <UnderlyingIndexName>group_id</UnderlyingIndexName>
+    </key>
+    <key id="161" parent="149" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <column id="162" parent="150" name="rowid">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="163" parent="150" name="noteName">
       <Position>2</Position>
       <DataType>varchar(32)|0s</DataType>
     </column>
-    <column id="152" parent="149" name="password">
+    <column id="164" parent="150" name="name">
       <Position>3</Position>
       <DataType>varchar(32)|0s</DataType>
     </column>
-    <column id="153" parent="149" name="vip_level">
+    <column id="165" parent="150" name="homeAddress">
+      <Position>4</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="166" parent="150" name="workAddress">
+      <Position>5</Position>
+      <DataType>varchar(64)|0s</DataType>
+    </column>
+    <column id="167" parent="150" name="career">
+      <Position>6</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="168" parent="150" name="contactId">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="169" parent="150" name="phoneNumber">
+      <Position>8</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="170" parent="150" name="avaterUrl">
+      <Position>9</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="171" parent="150" name="group_id">
+      <Position>10</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="172" parent="151" name="phoneNumber">
+      <Position>1</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="173" parent="151" name="name">
+      <Position>2</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="174" parent="152" name="rowid">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="175" parent="152" name="noteName">
+      <Position>2</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="176" parent="152" name="avaterUrl">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="177" parent="152" name="phoneNumber">
+      <Position>4</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="178" parent="152" name="status">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="179" parent="152" name="recordId">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="180" parent="152" name="receiverId">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="181" parent="152" name="date">
+      <Position>8</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="182" parent="152" name="duration">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="183" parent="153" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="184" parent="153" name="username">
+      <Position>2</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="185" parent="153" name="password">
+      <Position>3</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="186" parent="153" name="vip_level">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="154" parent="149" name="amount">
+    <column id="187" parent="153" name="amount">
       <Position>5</Position>
       <DataType>double|0s</DataType>
     </column>
-    <key id="155" parent="149" name="PRIMARY">
+    <column id="188" parent="153" name="phone_number">
+      <Position>6</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <column id="189" parent="153" name="avatar_url">
+      <Position>7</Position>
+      <DataType>varchar(32)|0s</DataType>
+    </column>
+    <key id="190" parent="153" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="191" parent="154" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="192" parent="154" name="userId">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="193" parent="154" name="content">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <index id="194" parent="154" name="userPost_userInfo_id_fk">
+      <ColNames>userId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="195" parent="154" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

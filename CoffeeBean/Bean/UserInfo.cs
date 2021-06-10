@@ -7,13 +7,18 @@
         private string password;
         private int vip_level;
         private double amount;
-
+        private string phoneNumber;
         public int Id
         {
             get => id;
             set => id = value;
         }
 
+        public string PhoneNumber
+        {
+            get => phoneNumber;
+            set => phoneNumber = value;
+        }
         public string Username
         {
             get => username;

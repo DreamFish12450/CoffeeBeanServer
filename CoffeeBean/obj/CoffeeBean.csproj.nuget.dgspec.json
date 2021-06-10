@@ -42,6 +42,14 @@
               "target": "Package",
               "version": "[2.0.90, )"
             },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.0-preview.3.21201.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.10.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.24, )"
@@ -49,6 +57,10 @@
             "MySql.Data.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -73,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,13 +10,13 @@ namespace CoffeeBean.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class userInfoController : ControllerBase
+    public class UserInfoController : ControllerBase
     {
         // why readonly
         // 只在运行时求值，且能够修饰各种属性。
         // 只读不能修改
         private readonly IUserRepository _userRepository;
-        public userInfoController(IUserRepository iUserRepository)
+        public UserInfoController(IUserRepository iUserRepository)
         {
            _userRepository = iUserRepository;
         }
@@ -50,6 +50,30 @@ namespace CoffeeBean.Controllers
             await _userRepository.AddUserAsync(user);
             return NoContent();
         }
+
+        [Route("changePassword")]
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] userInfo user, string beforePassword,string afterPassword)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var userGetByUsernameAsync = await _userRepository.GetByUsernameAsync(user.Username);
+
+            if (userGetByUsernameAsync.Password != beforePassword)
+            {
+                return Content("密码错误，请重新验证");
+            }
+            else
+            {
+                await _userRepository.ChangePasswordAsync(user, afterPassword);
+                return NoContent();
+            }
+            
+        }
+        
     }
     
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoffeeBean.Bean;
 using CoffeeBean.dao;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,10 @@ namespace CoffeeBean
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddScoped<IUserPostRepository, UserPostRepository>();
+            services.AddScoped<IPhoneRecordRepository, PhoneRecordRepository>();
+            services.AddScoped<IContactInfoRepository, ContactInfoRepository>();
+            services.AddScoped<IOnlineUser,OnlineUserRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

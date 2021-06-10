@@ -14,5 +14,8 @@ namespace CoffeeBean.dao
         Task<userInfo> GetByUsernameAsync(string username);
 
         Task<bool> AddUserAsync(userInfo user);
+        
+        
+        Task<bool> ChangePasswordAsync(userInfo user, string password);
     }
 }
